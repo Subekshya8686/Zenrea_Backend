@@ -1,12 +1,18 @@
 package com.example.zenrea_backend.entity;
 
 import jakarta.persistence.*;
+import lombok.*;
 
 import java.sql.Timestamp;
 
+@Builder
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
 @Entity
 @Table(name = "lists")
-public class List {
+public class Lists {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -27,6 +33,5 @@ public class List {
     @Column(name = "updated_at")
     private Timestamp updatedAt;
 
-    // Constructors, getters, setters
 }
 

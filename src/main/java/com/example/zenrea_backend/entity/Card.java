@@ -1,9 +1,15 @@
 package com.example.zenrea_backend.entity;
 
 import jakarta.persistence.*;
+import lombok.*;
 
 import java.sql.Timestamp;
 
+@Builder
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
 @Entity
 @Table(name = "cards")
 public class Card {
@@ -15,11 +21,9 @@ public class Card {
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "list_id")
-    private List list;
+    private BoardList list;
 
     private String name;
-
-    private String description;
 
     @Column(name = "due_date")
     private Timestamp dueDate;
@@ -32,5 +36,4 @@ public class Card {
     @Column(name = "updated_at")
     private Timestamp updatedAt;
 
-    // Constructors, getters, setters
 }

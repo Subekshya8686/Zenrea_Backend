@@ -21,7 +21,6 @@ import java.util.stream.Collectors;
 @Table(name = "users", uniqueConstraints = {
         @UniqueConstraint(name = "UNIQUE_user_email", columnNames = "email")
 })
-
 public class User {
     @Id
     @SequenceGenerator(name = "users_seq_gen", sequenceName = "users_id_seq", allocationSize = 1)

@@ -1,25 +1,23 @@
 package com.example.zenrea_backend.dto;
 
+import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import org.antlr.v4.runtime.misc.NotNull;
 
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class UserDto {
-    private Integer id;
+public class CommentDto {
+    private Long id;
 
     @NotNull
-    private String fullName;
+    private String text;
 
     @NotNull
-    private String email;
+    private Long cardId;
 
     @NotNull
-    private String mobileNo;
+    private Long userId;
 
-    @NotNull
-    private String password;
 }

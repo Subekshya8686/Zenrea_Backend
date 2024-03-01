@@ -12,7 +12,7 @@ public class BoardDto {
     private Long id;
 
     @NotNull
-    private String name;
+    private String boardName;
 
 }
 

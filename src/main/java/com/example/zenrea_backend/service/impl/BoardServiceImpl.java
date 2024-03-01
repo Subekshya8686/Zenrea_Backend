@@ -21,7 +21,7 @@ public class BoardServiceImpl implements BoardService {
         if(boardDto.getId()!=null) {
             board=boardRepo.findById((boardDto.getId())).orElseThrow(() ->new NullPointerException("data not found"));
         }
-        board.setName(boardDto.getName());
+        board.setBoardName(boardDto.getBoardName());
         boardRepo.save(board);
         return "created";
     }

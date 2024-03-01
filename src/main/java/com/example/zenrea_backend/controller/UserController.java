@@ -4,6 +4,7 @@ package com.example.zenrea_backend.controller;
 import com.example.zenrea_backend.dto.UserDto;
 import com.example.zenrea_backend.entity.User;
 import com.example.zenrea_backend.service.UserService;
+import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
@@ -24,7 +25,7 @@ public class UserController {
     }
 
     @PostMapping("/save")
-    public String createData(@RequestBody UserDto userDto){
+    public String createData(@Valid @RequestBody UserDto userDto){
         userService.save(userDto);
         return "created data";
     }

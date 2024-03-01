@@ -1,25 +1,21 @@
 package com.example.zenrea_backend.dto;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
-import org.antlr.v4.runtime.misc.NotNull;
+import lombok.*;
 
-@Data
+@Setter
+@Getter
 @NoArgsConstructor
 @AllArgsConstructor
 public class UserDto {
     private Integer id;
 
-    @NotNull
     private String fullName;
 
-    @NotNull
     private String email;
 
-    @NotNull
-    private String mobileNo;
+    private String username;
 
-    @NotNull
     private String password;
+
+//    private String confirmPassword;
 }

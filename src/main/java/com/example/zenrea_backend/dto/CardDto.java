@@ -12,9 +12,11 @@ public class CardDto {
     private Long id;
 
     @NotNull
-    private String name;
+    private String title;
+    @NotNull
+    private String image;
 
     @NotNull
-    private Long listId;
+    private String description;
 
 }

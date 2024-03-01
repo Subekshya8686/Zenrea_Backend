@@ -19,13 +19,7 @@ public class Board {
     @Column(name = "board_id")
     private Long id;
 
-    private String name;
-
-    @Column(name = "created_at")
-    private Timestamp createdAt;
-
-    @Column(name = "updated_at")
-    private Timestamp updatedAt;
+    private String boardName;
 
 }
 

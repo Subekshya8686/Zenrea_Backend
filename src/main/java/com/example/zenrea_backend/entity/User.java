@@ -19,7 +19,9 @@ import java.util.stream.Collectors;
 @AllArgsConstructor
 @Entity
 @Table(name = "users", uniqueConstraints = {
-        @UniqueConstraint(name = "UNIQUE_user_email", columnNames = "email")
+        @UniqueConstraint(
+                name = "UNIQUE_user_email",
+                columnNames = "email")
 })
 public class User {
     @Id
@@ -27,19 +29,18 @@ public class User {
     @GeneratedValue(generator = "users_seq_gen", strategy = GenerationType.SEQUENCE)
     private Integer id;
 
-    @Column(name = "fullname")
-    @NotNull
+    @Column(name = "fullname", nullable = false)
     private String fullName;
 
-    @Column(name = "email")
-    @NotNull
+    @Column(name = "email", nullable = false)
     private String email;
 
-    @Column(name = "password")
-    @NotNull
+    @Column(name = "username", nullable = false)
+    private String username;
+
+    @Column(name = "password", nullable = false)
     private String password;
 
-    @Column(name = "confirmPassword")
-    @NotNull
-    private String confirmPassword;
+//    @Column(name = "confirmPassword", nullable = false)
+//    private String confirmPassword;
 }

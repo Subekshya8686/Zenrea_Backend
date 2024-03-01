@@ -41,5 +41,12 @@ public class CardController {
     public void deleteById(@PathVariable("id") Long id) {
         cardService.deleteById(id);
     }
+
+    @PutMapping("/update/{id}")
+    public String updateData(@PathVariable("id") Long id, @RequestBody CardDto cardDto) {
+        cardDto.setId(id);
+        cardService.update(cardDto);
+        return "updated data";
+    }
 }
 

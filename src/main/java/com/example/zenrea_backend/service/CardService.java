@@ -11,4 +11,6 @@ public interface CardService {
     Optional<Card> getById(Long id);
 
     void deleteById(Long id);
+
+    String update(CardDto cardDto);
 }

@@ -3,8 +3,6 @@ package com.example.zenrea_backend.entity;
 import jakarta.persistence.*;
 import lombok.*;
 
-import java.sql.Timestamp;
-
 @Builder
 @Getter
 @Setter
@@ -20,20 +18,17 @@ public class Card {
     private Long id;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "list_id")
-    private BoardList list;
+    @JoinColumn(name = "board_id")
+    private Board board;
 
-    private String name;
+    @Column
+    private String title;
 
-    @Column(name = "due_date")
-    private Timestamp dueDate;
+    @Column
+    private String image;
 
-    private Integer position;
+    @Column
+    private String description;
 
-    @Column(name = "created_at")
-    private Timestamp createdAt;
-
-    @Column(name = "updated_at")
-    private Timestamp updatedAt;
 
 }

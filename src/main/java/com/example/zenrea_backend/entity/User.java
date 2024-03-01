@@ -23,14 +23,12 @@ import java.util.stream.Collectors;
                 name = "UNIQUE_user_email",
                 columnNames = "email")
 })
-public class User {
+public class User implements UserDetails{
     @Id
     @SequenceGenerator(name = "users_seq_gen", sequenceName = "users_id_seq", allocationSize = 1)
     @GeneratedValue(generator = "users_seq_gen", strategy = GenerationType.SEQUENCE)
     private Integer id;
 
-    @Column(name = "fullname", nullable = false)
-    private String fullName;
 
     @Column(name = "email", nullable = false)
     private String email;
@@ -41,6 +39,33 @@ public class User {
     @Column(name = "password", nullable = false)
     private String password;
 
-//    @Column(name = "confirmPassword", nullable = false)
-//    private String confirmPassword;
+    @Override
+    public Collection<? extends GrantedAuthority> getAuthorities() {
+        return null;
+    }
+
+    @Override
+    public String getUsername() {
+        return this.email;
+    }
+
+    @Override
+    public boolean isAccountNonExpired() {
+        return true;
+    }
+
+    @Override
+    public boolean isAccountNonLocked() {
+        return true;
+    }
+
+    @Override
+    public boolean isCredentialsNonExpired() {
+        return true;
+    }
+
+    @Override
+    public boolean isEnabled() {
+        return true;
+    }
 }
